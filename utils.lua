@@ -1,9 +1,25 @@
 local utils = {}
 
 -- Helper function to concatenate arrays
+-- function utils.array_concat(t1, t2)
+--     for _, v in ipairs(t2) do
+--         t1[#t1 + 1] = v
+--     end
+-- end
+
+-- updated version of array_concat that can work with both simple arrays and nested ones like DECOCRAFT.CONFIG.BASE_ROCKS = {
+--    ["nauvis"] = {...}
+
 function utils.array_concat(t1, t2)
-    for _, v in ipairs(t2) do
-        t1[#t1 + 1] = v
+    for k, v in pairs(t2) do
+        if type(v) == "table" then
+            if not t1[k] then
+                t1[k] = {}
+            end
+            utils.array_concat(t1[k], v)
+        else
+            table.insert(t1, v)
+        end
     end
 end
 
@@ -81,8 +97,8 @@ function utils.make_it_craftable(name, type, group, subgroup, order)
             type = "recipe",
             name = "decocraft-base-" .. name,
             energy_required = 2,
-            -- enabled = false,
-            enabled = true,
+            enabled = false,
+            -- enabled = true,
             category = "crafting",
             -- hidden_in_factoriopedia = true,
             -- factoriopedia_alternative = type .. "/" .. name,
@@ -96,6 +112,19 @@ function utils.make_it_craftable(name, type, group, subgroup, order)
             }
         }
     })
+
+    -- if unlocked_by_technology then
+    --     -- data.raw["technology"][unlocked_by_technology].effects = {
+    --     --     {
+    --     --         type = "unlock-recipe",
+    --     --         recipe = "decocraft-base-" .. name
+    --     --     }
+    --     -- }
+    --     table.insert(data.raw["technology"][unlocked_by_technology].effects, {
+    --         type = "unlock-recipe",
+    --         recipe = "decocraft-base-" .. name
+    --     })
+    -- end
 
     -- data.raw[type][name].can_be_part_of_blueprint = true
     -- make it blueprintable

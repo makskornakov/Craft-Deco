@@ -174,5 +174,33 @@ if mods["alien-biomes"] then
         end
     end
 
+    -- add alien biomes rocks and trees to the base research
+
+    local landscaping_effects = data.raw["technology"]["decocraft-landscaping"].effects
+
+    if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
+        for _, tree in pairs(trees) do
+            if data.raw["tree"][tree] then
+                table.insert(landscaping_effects, {
+                    type = "unlock-recipe",
+                    recipe = "decocraft-base-" .. tree
+                })
+            end
+        end
+    end
+
+    for _, rock in pairs(rocks) do
+        if data.raw["simple-entity"][rock.name] then
+            table.insert(landscaping_effects, {
+                type = "unlock-recipe",
+                recipe = "decocraft-base-" .. rock.name
+            })
+        end
+    end
+
+    -- for _, effect in pairs(landscaping_effects) do
+    --     table.insert(data.raw["technology"]["decocraft-landscaping"].effects, effect)
+    -- end
+
 end
 

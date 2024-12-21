@@ -33,70 +33,88 @@ DECOCRAFT.CONFIG.BASE_TREES = {
 }
 
 DECOCRAFT.CONFIG.CRAFTABLE_TREES = {
-    "dead-dry-hairy-tree",
-    "dead-grey-trunk",
-    "dead-tree-desert",
-    "dry-hairy-tree",
-    "dry-tree"
+    ["nauvis"] = {
+        "dead-dry-hairy-tree",
+        "dead-grey-trunk",
+        "dead-tree-desert",
+        "dry-hairy-tree",
+        "dry-tree"
+    }
 }
 
 if mods['space-age'] then
     utils.array_concat(DECOCRAFT.CONFIG.CRAFTABLE_TREES, {
-        "ashland-lichen-tree",
-        "ashland-lichen-tree-flaming"
+        ["vulcanus"] = {
+            "ashland-lichen-tree",
+            "ashland-lichen-tree-flaming"
+        }
     })
 end
 
 DECOCRAFT.CONFIG.CRAFTABLE_ALIVE_TREES = {
-    "tree-06",
-    "tree-06-brown"
+    ["nauvis"] = {
+        "tree-06",
+        "tree-06-brown"
+    }
 }
 
 if mods['space-age'] then
     utils.array_concat(DECOCRAFT.CONFIG.CRAFTABLE_ALIVE_TREES, {
-        "sunnycomb",
-        "slipstack",
-        "cuttlepop",
-        "boompuff",
-        "stingfrond",
-        "funneltrunk",
-        "teflilly",
-        "hairyclubnub",
-        "lickmaw",
-        "water-cane"
+        ["gleba"] = {
+            "sunnycomb",
+            "slipstack",
+            "cuttlepop",
+            "boompuff",
+            "stingfrond",
+            "funneltrunk",
+            "teflilly",
+            "hairyclubnub",
+            "lickmaw",
+            "water-cane"
+        }
     })
 
 end
 
 DECOCRAFT.CONFIG.BASE_ROCKS = {
-    "big-rock",
-    "big-sand-rock",
-    "huge-rock"
+    ["nauvis"] = {
+        "big-rock",
+        "big-sand-rock",
+        "huge-rock"
+    }
 }
 
 if mods['space-age'] then
     utils.array_concat(DECOCRAFT.CONFIG.BASE_ROCKS, {
-        "big-volcanic-rock",
-        "big-fulgora-rock",
-        "copper-stromatolite",
-        "fulgoran-ruin-big",
-        "fulgoran-ruin-colossal",
-        "fulgoran-ruin-huge",
-        "fulgoran-ruin-medium",
-        "fulgoran-ruin-small",
-        "fulgoran-ruin-stonehenge",
-        "fulgoran-ruin-vault",
-        "fulgurite",
-        "fulgurite-small",
-        "huge-volcanic-rock",
-        "iron-stromatolite",
-        "lithium-iceberg-big",
-        "lithium-iceberg-huge",
-        "vulcanus-chimney",
-        "vulcanus-chimney-cold",
-        "vulcanus-chimney-faded",
-        "vulcanus-chimney-short",
-        "vulcanus-chimney-truncated"
+        ["vulcanus"] = {
+            "big-volcanic-rock",
+            "vulcanus-chimney",
+            "vulcanus-chimney-cold",
+            "vulcanus-chimney-faded",
+            "vulcanus-chimney-short",
+            "vulcanus-chimney-truncated",
+            "huge-volcanic-rock"
+        },
+        ["fulgora"] = {
+            "big-fulgora-rock",
+            "fulgoran-ruin-big",
+            "fulgoran-ruin-colossal",
+            "fulgoran-ruin-huge",
+            "fulgoran-ruin-medium",
+            "fulgoran-ruin-small",
+            "fulgoran-ruin-stonehenge",
+            "fulgoran-ruin-vault",
+            "fulgurite",
+            "fulgurite-small"
+        },
+        ["gleba"] = {
+            "copper-stromatolite",
+            "iron-stromatolite"
+        },
+        ["aquilo"] = {
+            "lithium-iceberg-big",
+            "lithium-iceberg-huge"
+        }
     })
 
 end

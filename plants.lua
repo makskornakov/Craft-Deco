@@ -113,7 +113,8 @@ local function create_custom_wood_processing(name, source_tree)
     wood_processing.localised_name = {
         "recipe-name." .. name .. "-wood-processing"
     }
-    wood_processing.enabled = true
+    -- wood_processing.enabled = true
+    wood_processing.enabled = false
     wood_processing.icon = data.raw["tree"][source_tree].icon
     wood_processing.icon_size = 64
     wood_processing.icon_mipmaps = 4
@@ -132,6 +133,19 @@ local function create_custom_wood_processing(name, source_tree)
             amount = 1
         }
     }
+
+    -- unlocked by tree-seeding technology
+    table.insert(data.raw["technology"]["tree-seeding"].effects, {
+        type = "unlock-recipe",
+        recipe = name .. "-wood-processing"
+    })
+    -- data.raw["technology"]["tree-seeding"].effects = {
+    --     {
+    --         type = "unlock-recipe",
+    --         recipe = name .. "-wood-processing"
+    --     }
+    -- }
+
     return wood_processing
 end
 

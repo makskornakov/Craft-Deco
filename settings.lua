@@ -4,6 +4,9 @@ data:extend({
         name = "real-alive-trees",
         setting_type = "startup",
         default_value = true,
+        -- if no space age force to false
+        forced_value = mods["space-age"] and nil or false,
+        hidden = not mods["space-age"],
         order = "a-a"
     },
     {
