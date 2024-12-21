@@ -21,10 +21,8 @@ local function create_tree_plant(name, source_tree, variation_weights, agricultu
     tree_plant.flags = plant_flags
 
     tree_plant.map_color = data.raw["plant"]["tree-plant"].map_color
-    -- tree_plant.agricultural_tower_tint = data.raw["plant"]["tree-plant"].agricultural_tower_tint
     tree_plant.agricultural_tower_tint = agricultural_tower_tint or
                                              data.raw["plant"]["tree-plant"].agricultural_tower_tint
-    -- tree_plant.minable = data.raw["plant"]["tree-plant"].minable
     tree_plant.autoplace = data.raw["plant"]["tree-plant"].autoplace
 
     if variation_weights then
@@ -59,14 +57,6 @@ local function create_tree_plant(name, source_tree, variation_weights, agricultu
             amount = 4
         }
     }
-
-    -- data.raw["tree"][source_tree].minable.results = {
-    --     {
-    --         type = "item",
-    --         name = name .. "-wood",
-    --         amount = 4
-    --     }
-    -- }
 
     return tree_plant
 end
@@ -113,7 +103,6 @@ local function create_custom_wood_processing(name, source_tree)
     wood_processing.localised_name = {
         "recipe-name." .. name .. "-wood-processing"
     }
-    -- wood_processing.enabled = true
     wood_processing.enabled = false
     wood_processing.icon = data.raw["tree"][source_tree].icon
     wood_processing.icon_size = 64
@@ -139,12 +128,6 @@ local function create_custom_wood_processing(name, source_tree)
         type = "unlock-recipe",
         recipe = name .. "-wood-processing"
     })
-    -- data.raw["technology"]["tree-seeding"].effects = {
-    --     {
-    --         type = "unlock-recipe",
-    --         recipe = name .. "-wood-processing"
-    --     }
-    -- }
 
     return wood_processing
 end
@@ -164,7 +147,6 @@ local pine_variations_weights = {
     0.0
 }
 
--- if mods["space-age"] then
 local pine_tree_plant = create_tree_plant("pine", "tree-01", pine_variations_weights)
 local pine_wood = create_custom_wood("pine")
 local pine_seeds = create_custom_seeds("pine")
@@ -186,5 +168,3 @@ data:extend({
     maple_wood,
     maple_wood_processing
 })
--- end
-

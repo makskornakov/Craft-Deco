@@ -14,8 +14,6 @@ DECOCRAFT.CONFIG.SETTINGS = {
     ["normal-trees-craft-type"] = settings.startup["normal-trees-craft-type"].value
 }
 
--- DECOCRAFT.CONFIG.REALISTIC_ALIVE_TREES = true
-
 DECOCRAFT.CONFIG.BASE_TREES = {
     "tree-01",
     "tree-02",

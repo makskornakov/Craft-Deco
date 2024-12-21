@@ -19,41 +19,14 @@ local function add_to_landscaping_effects(array, type)
     end
 end
 
--- add all nauvis trees to the base research
--- for _, tree in pairs(craftable_trees["nauvis"]) do
---     if data.raw["tree"][tree] then
---         table.insert(landscaping_effects, {
---             type = "unlock-recipe",
---             recipe = "decocraft-base-" .. tree
---         })
---     end
--- end
-
 add_to_landscaping_effects(craftable_trees["nauvis"], "tree")
 
 -- add all other trees to the base research
 if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
-    -- for _, tree in pairs(base_trees) do
-    --     if data.raw["tree"][tree] then
-    --         table.insert(landscaping_effects, {
-    --             type = "unlock-recipe",
-    --             recipe = "decocraft-base-" .. tree
-    --         })
-    --     end
-    -- end
     add_to_landscaping_effects(base_trees, "tree")
 end
 
--- add all nauvis rocks to the base research
--- for _, rock in pairs(base_rocks["nauvis"]) do
---     if data.raw["simple-entity"][rock] then
---         table.insert(landscaping_effects, {
---             type = "unlock-recipe",
---             recipe = "decocraft-base-" .. rock
---         })
---     end
--- end
-
+-- add all rocks to the base research
 add_to_landscaping_effects(base_rocks["nauvis"], "simple-entity")
 
 -- Base research
