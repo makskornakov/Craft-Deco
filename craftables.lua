@@ -60,7 +60,7 @@ local function make_it_craftable(name, type, group, subgroup, order)
             icon_mipmaps = 4,
             group = group,
             subgroup = subgroup,
-            hidden_in_factoriopedia = true,
+            -- hidden_in_factoriopedia = true,
             -- factoriopedia_alternative = name,
             order = order,
             stack_size = 20,
@@ -84,11 +84,11 @@ for _, name in pairs(base_rocks) do
 end
 
 for _, name in pairs(craftable_trees) do
-    make_it_craftable(name, "tree", DECOCRAFT.ITEM_GROUP, "craftable-trees", "b[base-" .. name .. "]")
+    make_it_craftable(name, "tree", DECOCRAFT.ITEM_GROUP, "craftable-trees", "f[base-" .. name .. "]")
 end
 
 for _, name in pairs(craftable_alive_trees) do
-    make_it_craftable(name, "tree", DECOCRAFT.ITEM_GROUP, "craftable-alive-trees", "a[base-" .. name .. "]")
+    make_it_craftable(name, "tree", DECOCRAFT.ITEM_GROUP, "craftable-alive-trees", "e[base-" .. name .. "]")
     if DECOCRAFT.CONFIG.ENABLED["realistic-alive-trees"] then
         data.raw.tree[name].surface_conditions = {
             {
