@@ -7,7 +7,7 @@ local plant_flags = {
     "breaths-air"
 }
 
-local function create_tree_plant(name, source_tree, variation_weights)
+local function create_tree_plant(name, source_tree, variation_weights, agricultural_tower_tint)
     local tree_plant = util.table.deepcopy(data.raw["tree"][source_tree])
 
     -- tree_plant.hidden_in_factoriopedia = false
@@ -21,7 +21,9 @@ local function create_tree_plant(name, source_tree, variation_weights)
     tree_plant.flags = plant_flags
 
     tree_plant.map_color = data.raw["plant"]["tree-plant"].map_color
-    tree_plant.agricultural_tower_tint = data.raw["plant"]["tree-plant"].agricultural_tower_tint
+    -- tree_plant.agricultural_tower_tint = data.raw["plant"]["tree-plant"].agricultural_tower_tint
+    tree_plant.agricultural_tower_tint = agricultural_tower_tint or
+                                             data.raw["plant"]["tree-plant"].agricultural_tower_tint
     -- tree_plant.minable = data.raw["plant"]["tree-plant"].minable
     tree_plant.autoplace = data.raw["plant"]["tree-plant"].autoplace
 
@@ -148,12 +150,14 @@ local pine_variations_weights = {
     0.0
 }
 
+-- if mods["space-age"] then
 local pine_tree_plant = create_tree_plant("pine", "tree-01", pine_variations_weights)
 local pine_wood = create_custom_wood("pine")
 local pine_seeds = create_custom_seeds("pine")
 local pine_wood_processing = create_custom_wood_processing("pine", "tree-01")
 
-local maple_tree_plant = create_tree_plant("maple", "tree-09-red")
+local maple_tree_plant = create_tree_plant("maple", "tree-09-red", nil,
+    data.raw["plant"]["yumako-tree"].agricultural_tower_tint)
 local maple_wood = create_custom_wood("maple")
 local maple_seeds = create_custom_seeds("maple")
 local maple_wood_processing = create_custom_wood_processing("maple", "tree-09-red")
@@ -168,4 +172,5 @@ data:extend({
     maple_wood,
     maple_wood_processing
 })
+-- end
 
