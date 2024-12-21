@@ -1,0 +1,9 @@
+{
+  "name": "DecoCraft",
+  "version": "0.1.0",
+  "title": "Craft Decorations",
+  "author": "Max Kornakov",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0", "space-age >= 2.0"],
+  "description": "This mod lets you craft base game decorations."
+}
