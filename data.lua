@@ -1,14 +1,14 @@
 DECOCRAFT = require("config")
 
-require("item-group")
-require("craftables")
+require("prototypes.item-group")
+require("prototypes.craftables")
 
 if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "seeding" then
-    require("plants")
+    require("prototypes.plants")
 end
 
 if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
-    require("simple-trees")
+    require("prototypes.simple-trees")
 end
 
-require("technology")
+require("prototypes.technology")
