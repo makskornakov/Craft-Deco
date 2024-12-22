@@ -147,6 +147,16 @@ local pine_variations_weights = {
     0.0
 }
 
+-- currently base tree-plant can only be planted on Nauvis, change pressure to 1000-2000
+
+data.raw["plant"]["tree-plant"].surface_conditions = {
+    {
+        property = "pressure",
+        min = 1000,
+        max = 2000
+    }
+}
+
 local pine_tree_plant = create_tree_plant("pine", "tree-01", pine_variations_weights)
 local pine_wood = create_custom_wood("pine")
 local pine_seeds = create_custom_seeds("pine")
