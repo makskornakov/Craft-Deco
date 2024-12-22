@@ -1,5 +1,7 @@
 # Craft Deco factorio mod
 
+[Home page](https://mods.factorio.com/mod/craft-deco?from=search)
+
 Adds a couple of tweaks to let players decorate factories using in game decorative entities and trees.
 
 Any ideas, corrections, comments and contributions to source code are appreciated.
