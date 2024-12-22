@@ -67,11 +67,11 @@ local function create_custom_wood(name)
     wood.localised_name = {
         "item-name." .. name .. "-wood"
     }
-    wood.icon = "__DecoCraft__/graphics/icons/" .. name .. "-wood.png"
+    wood.icon = "__craft-deco__/graphics/icons/" .. name .. "-wood.png"
     wood.icon_size = 64
     wood.icon_mipmaps = 4
     wood.picture = {
-        filename = "__DecoCraft__/graphics/icons/" .. name .. "-wood.png",
+        filename = "__craft-deco__/graphics/icons/" .. name .. "-wood.png",
         scale = 0.5,
         mipmap_count = 4
     }
@@ -85,10 +85,10 @@ local function create_custom_seeds(tree_name)
         "item-name." .. tree_name .. "-seed"
     }
     -- seeds.factoriopedia_alternative = nil;
-    seeds.icon = "__DecoCraft__/graphics/icons/" .. tree_name .. "-seed.png"
+    seeds.icon = "__craft-deco__/graphics/icons/" .. tree_name .. "-seed.png"
     seeds.picture = {
         size = 64,
-        filename = "__DecoCraft__/graphics/icons/" .. tree_name .. "-seed-1.png",
+        filename = "__craft-deco__/graphics/icons/" .. tree_name .. "-seed-1.png",
         scale = 0.5,
         mipmap_count = 4
     }

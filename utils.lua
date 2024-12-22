@@ -61,7 +61,7 @@ function utils.make_it_craftable(name, type, group, subgroup, order)
     data:extend({
         {
             type = "item",
-            name = "decocraft-base-" .. name,
+            name = "craftdeco-base-" .. name,
             icon = data.raw[type][name].icon,
             icons = data.raw[type][name].icons,
 
@@ -79,7 +79,7 @@ function utils.make_it_craftable(name, type, group, subgroup, order)
         },
         {
             type = "recipe",
-            name = "decocraft-base-" .. name,
+            name = "craftdeco-base-" .. name,
             energy_required = 2,
             enabled = false,
             category = "crafting",
@@ -89,7 +89,7 @@ function utils.make_it_craftable(name, type, group, subgroup, order)
             results = {
                 {
                     type = "item",
-                    name = "decocraft-base-" .. name,
+                    name = "craftdeco-base-" .. name,
                     amount = 1
                 }
             }

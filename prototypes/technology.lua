@@ -1,7 +1,7 @@
-local base_trees = DECOCRAFT.CONFIG.BASE_TREES
-local craftable_trees = DECOCRAFT.CONFIG.CRAFTABLE_TREES
-local craftable_alive_trees = DECOCRAFT.CONFIG.CRAFTABLE_ALIVE_TREES
-local base_rocks = DECOCRAFT.CONFIG.BASE_ROCKS
+local base_trees = CRAFTDECO.CONFIG.BASE_TREES
+local craftable_trees = CRAFTDECO.CONFIG.CRAFTABLE_TREES
+local craftable_alive_trees = CRAFTDECO.CONFIG.CRAFTABLE_ALIVE_TREES
+local base_rocks = CRAFTDECO.CONFIG.BASE_ROCKS
 
 local utils = require("utils")
 
@@ -13,7 +13,7 @@ local function add_to_landscaping_effects(array, type)
         if data.raw[type][item] then
             table.insert(landscaping_effects, {
                 type = "unlock-recipe",
-                recipe = "decocraft-base-" .. item
+                recipe = "craftdeco-base-" .. item
             })
         end
     end
@@ -22,7 +22,7 @@ end
 add_to_landscaping_effects(craftable_trees["nauvis"], "tree")
 
 -- add all other trees to the base research
-if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
+if CRAFTDECO.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
     add_to_landscaping_effects(base_trees, "tree")
 end
 
@@ -33,7 +33,7 @@ add_to_landscaping_effects(base_rocks["nauvis"], "simple-entity")
 data:extend({
     {
         type = "technology",
-        name = "decocraft-landscaping",
+        name = "craft-deco-landscaping",
         icons = {
             {
                 icon = data.raw["item-group"]["environment"].icon,
@@ -86,7 +86,7 @@ local function create_planet_effects(array, type)
         if data.raw[type][item] then
             table.insert(effects, {
                 type = "unlock-recipe",
-                recipe = "decocraft-base-" .. item
+                recipe = "craftdeco-base-" .. item
             })
         end
     end
@@ -145,13 +145,13 @@ local function create_planet_landscaping_technology(planet, research_trigger, ic
     data:extend({
         {
             type = "technology",
-            name = "decocraft-" .. planet .. "-landscaping",
+            name = "craft-deco-" .. planet .. "-landscaping",
 
             icons = create_planet_landscaping_technology_icon(planet, icon1, icon2),
 
             icon_size = 256,
             prerequisites = {
-                "decocraft-landscaping"
+                "craft-deco-landscaping"
             },
             icon_mipmaps = 1,
             research_trigger = research_trigger,

@@ -1,20 +1,20 @@
-local DECOCRAFT = {}
+local CRAFTDECO = {}
 
 local utils = require("utils")
 
-DECOCRAFT.CONFIG = {}
+CRAFTDECO.CONFIG = {}
 
-DECOCRAFT.ITEM_GROUP = "Environment"
+CRAFTDECO.ITEM_GROUP = "Environment"
 
-DECOCRAFT.CONFIG.ENABLED = {
+CRAFTDECO.CONFIG.ENABLED = {
     ["realistic-alive-trees"] = settings.startup["real-alive-trees"].value
 }
 
-DECOCRAFT.CONFIG.SETTINGS = {
+CRAFTDECO.CONFIG.SETTINGS = {
     ["normal-trees-craft-type"] = settings.startup["normal-trees-craft-type"].value
 }
 
-DECOCRAFT.CONFIG.BASE_TREES = {
+CRAFTDECO.CONFIG.BASE_TREES = {
     "tree-01",
     "tree-02",
     "tree-02-red",
@@ -30,7 +30,7 @@ DECOCRAFT.CONFIG.BASE_TREES = {
     "tree-09-red"
 }
 
-DECOCRAFT.CONFIG.CRAFTABLE_TREES = {
+CRAFTDECO.CONFIG.CRAFTABLE_TREES = {
     ["nauvis"] = {
         "dead-dry-hairy-tree",
         "dead-grey-trunk",
@@ -41,7 +41,7 @@ DECOCRAFT.CONFIG.CRAFTABLE_TREES = {
 }
 
 if mods['space-age'] then
-    utils.array_concat(DECOCRAFT.CONFIG.CRAFTABLE_TREES, {
+    utils.array_concat(CRAFTDECO.CONFIG.CRAFTABLE_TREES, {
         ["vulcanus"] = {
             "ashland-lichen-tree",
             "ashland-lichen-tree-flaming"
@@ -49,7 +49,7 @@ if mods['space-age'] then
     })
 end
 
-DECOCRAFT.CONFIG.CRAFTABLE_ALIVE_TREES = {
+CRAFTDECO.CONFIG.CRAFTABLE_ALIVE_TREES = {
     ["nauvis"] = {
         "tree-06",
         "tree-06-brown"
@@ -57,7 +57,7 @@ DECOCRAFT.CONFIG.CRAFTABLE_ALIVE_TREES = {
 }
 
 if mods['space-age'] then
-    utils.array_concat(DECOCRAFT.CONFIG.CRAFTABLE_ALIVE_TREES, {
+    utils.array_concat(CRAFTDECO.CONFIG.CRAFTABLE_ALIVE_TREES, {
         ["gleba"] = {
             "sunnycomb",
             "slipstack",
@@ -74,7 +74,7 @@ if mods['space-age'] then
 
 end
 
-DECOCRAFT.CONFIG.BASE_ROCKS = {
+CRAFTDECO.CONFIG.BASE_ROCKS = {
     ["nauvis"] = {
         "big-rock",
         "big-sand-rock",
@@ -83,7 +83,7 @@ DECOCRAFT.CONFIG.BASE_ROCKS = {
 }
 
 if mods['space-age'] then
-    utils.array_concat(DECOCRAFT.CONFIG.BASE_ROCKS, {
+    utils.array_concat(CRAFTDECO.CONFIG.BASE_ROCKS, {
         ["vulcanus"] = {
             "big-volcanic-rock",
             "vulcanus-chimney",
@@ -117,4 +117,4 @@ if mods['space-age'] then
 
 end
 
-return DECOCRAFT
+return CRAFTDECO

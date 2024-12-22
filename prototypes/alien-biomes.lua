@@ -155,11 +155,11 @@ if mods["alien-biomes"] then
     end
 
     -- add trees if tree crafting is in simple mode
-    if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
+    if CRAFTDECO.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
 
         for _, tree in pairs(trees) do
             if data.raw["tree"][tree] then
-                utils.make_it_craftable(tree, "tree", DECOCRAFT.ITEM_GROUP, "craftable-alien-biomes-trees",
+                utils.make_it_craftable(tree, "tree", CRAFTDECO.ITEM_GROUP, "craftable-alien-biomes-trees",
                     "a[alien-biomes-" .. tree .. "]")
             end
         end
@@ -169,21 +169,21 @@ if mods["alien-biomes"] then
     -- add rocks
     for _, rock in pairs(rocks) do
         if data.raw["simple-entity"][rock.name] then
-            utils.make_it_craftable(rock.name, "simple-entity", DECOCRAFT.ITEM_GROUP, "craftable-alien-biomes-rocks",
+            utils.make_it_craftable(rock.name, "simple-entity", CRAFTDECO.ITEM_GROUP, "craftable-alien-biomes-rocks",
                 "a[alien-biomes-" .. rock.name .. "]")
         end
     end
 
     -- add alien biomes rocks and trees to the base research
 
-    local landscaping_effects = data.raw["technology"]["decocraft-landscaping"].effects
+    local landscaping_effects = data.raw["technology"]["craft-deco-landscaping"].effects
 
-    if DECOCRAFT.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
+    if CRAFTDECO.CONFIG.SETTINGS["normal-trees-craft-type"] == "simple" then
         for _, tree in pairs(trees) do
             if data.raw["tree"][tree] then
                 table.insert(landscaping_effects, {
                     type = "unlock-recipe",
-                    recipe = "decocraft-base-" .. tree
+                    recipe = "craftdeco-base-" .. tree
                 })
             end
         end
@@ -193,13 +193,13 @@ if mods["alien-biomes"] then
         if data.raw["simple-entity"][rock.name] then
             table.insert(landscaping_effects, {
                 type = "unlock-recipe",
-                recipe = "decocraft-base-" .. rock.name
+                recipe = "craftdeco-base-" .. rock.name
             })
         end
     end
 
     -- for _, effect in pairs(landscaping_effects) do
-    --     table.insert(data.raw["technology"]["decocraft-landscaping"].effects, effect)
+    --     table.insert(data.raw["technology"]["CRAFTDECO-landscaping"].effects, effect)
     -- end
 
 end
