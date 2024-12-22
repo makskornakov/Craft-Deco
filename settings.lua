@@ -5,7 +5,7 @@ data:extend({
         setting_type = "startup",
         default_value = true,
         -- if no space age force to false
-        forced_value = mods["space-age"] and nil or false,
+        forced_value = not mods["space-age"] and false,
         hidden = not mods["space-age"],
         order = "a-a"
     },
@@ -13,7 +13,6 @@ data:extend({
         type = "string-setting",
         name = "normal-trees-craft-type",
         setting_type = "startup",
-        -- default_value = "seeding",
         -- if space age is enabled, default to seeding if not default to crafting
         default_value = mods["space-age"] and "seeding" or "simple",
         allowed_values = {

@@ -34,8 +34,21 @@ data:extend({
     {
         type = "technology",
         name = "decocraft-landscaping",
-        icon = data.raw["item-group"]["environment"].icon,
-        icon_size = 128,
+        icons = {
+            {
+                icon = data.raw["item-group"]["environment"].icon,
+                icon_size = 128
+            },
+            {
+                icon = "__base__/graphics/icons/nauvis.png",
+                icon_size = 64,
+                scale = 0.8,
+                shift = {
+                    35,
+                    50
+                }
+            }
+        },
         prerequisites = {
             "landfill"
         },
@@ -96,8 +109,21 @@ local function create_planet_landscaping_technology_icon(planet, icon1, icon2)
                 63,
                 63
             }
-        },
-        {
+        }
+        -- {
+        --     icon = icon2,
+        --     icon_size = 64,
+        --     scale = 1,
+        --     shift = {
+        --         -63,
+        --         63
+        --     }
+        -- }
+
+    }
+    -- if icon2 then
+    if icon2 then
+        table.insert(icons, {
             icon = icon2,
             icon_size = 64,
             scale = 1,
@@ -105,9 +131,8 @@ local function create_planet_landscaping_technology_icon(planet, icon1, icon2)
                 -63,
                 63
             }
-        }
-
-    }
+        })
+    end
     return icons
 end
 
@@ -153,7 +178,8 @@ create_planet_landscaping_technology("vulcanus", {
 
 create_planet_landscaping_technology("fulgora", {
     type = "mine-entity",
-    entity = "fulgoran-ruin-vault"
+    -- entity = "fulgoran-ruin-vault"
+    entity = "big-fulgora-rock"
 }, data.raw["lightning-attractor"]["fulgoran-ruin-attractor"].icon, data.raw["simple-entity"]["big-fulgora-rock"].icon)
 
 create_planet_landscaping_technology("gleba", {
@@ -164,5 +190,5 @@ create_planet_landscaping_technology("gleba", {
 create_planet_landscaping_technology("aquilo", {
     type = "mine-entity",
     entity = "lithium-iceberg-big"
-}, data.raw["simple-entity"]["lithium-iceberg-big"].icon, data.raw["simple-entity"]["lithium-iceberg-huge"].icon)
+}, data.raw["simple-entity"]["lithium-iceberg-big"].icon)
 
