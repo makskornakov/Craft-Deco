@@ -93,7 +93,8 @@ local function create_planet_effects(array, type)
     return effects
 end
 
--- function to create icons for each planets landscaping technology 
+-- function to create icons for each planets landscaping technology
+-- icon1 on the right bottom, icon2 on the left bottom (if present)
 local function create_planet_landscaping_technology_icon(planet, icon1, icon2)
     local icons = {
         {
@@ -110,18 +111,8 @@ local function create_planet_landscaping_technology_icon(planet, icon1, icon2)
                 63
             }
         }
-        -- {
-        --     icon = icon2,
-        --     icon_size = 64,
-        --     scale = 1,
-        --     shift = {
-        --         -63,
-        --         63
-        --     }
-        -- }
 
     }
-    -- if icon2 then
     if icon2 then
         table.insert(icons, {
             icon = icon2,
