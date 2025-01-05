@@ -1,9 +1,9 @@
 {
   "name": "craft-deco",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "title": "Craft Deco",
   "author": "Max Kornakov",
   "factorio_version": "2.0",
   "dependencies": ["base >= 2.0", "? space-age >= 2.0", "? alien-biomes >= 0.7.2"],
-  "description": "Craft base game decorative entities, seed or craft trees."
+  "description": "Craft decorations from all planets, seed or craft trees."
 }
